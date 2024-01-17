@@ -30,22 +30,30 @@ string menentukanPemenang(string pemain1, string pemain2) {
     }
 }
 
+// Fungsi untuk menampilkan pesan selama game
+void tampilkanPesan(string pesan) {
+    cout << "---------------------------\n";
+    cout << pesan << endl;
+    cout << "---------------------------\n";
+}
+
 int main() {
     srand(time(0));
 
-    cout << "Selamat datang di Game Batu-Kertas-Gunting!" << endl;
-
+    cout << "Selamat datang di Game Gunting - Batu - Kertas!" << endl;
+    
     string jawaban;
     do {
         string pemain1, pemain2;
 
-        cout << "Masukkan pilihan Anda (batu/kertas/gunting): ";
+        cout << "Masukkan pilihan Anda (gunting/batu/kertas): ";
         cin >> pemain1;
 
         pemain2 = pilihanBot();
         cout << "Bot memilih: " << pemain2 << endl;
 
-        cout << "Hasil: " << menentukanPemenang(pemain1, pemain2) << endl;
+        string hasil = menentukanPemenang(pemain1, pemain2);
+        tampilkanPesan("Hasil: " + hasil);
 
         cout << "Main lagi? (ya/tidak): ";
         cin >> jawaban;
